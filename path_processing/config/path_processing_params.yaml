@@ -1,0 +1,10 @@
+path_processing_node:
+  ros__parameters:
+    input_topic: "input_path"       # 订阅的路径话题名称
+    output_topic: "processed_path"  # 发布的路径话题名称
+    marker_topic: "visualization_marker_array"  # 可视化标记话题名称
+    interpolation_method: "linear"  # 插值/稀疏方法（例如：linear, spline, rdp）
+    max_points: 100                 # 最大路径点数（用于稀疏算法）
+    line_width: 0.1                 # 可视化线宽
+    original_color: [1.0, 0.0, 0.0] # 原始路径颜色（RGB）
+    processed_color: [0.0, 1.0, 0.0] # 处理后的路径颜色（RGB）

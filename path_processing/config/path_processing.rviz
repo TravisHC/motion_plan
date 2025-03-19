@@ -1,0 +1,36 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: MarkerArray
+      Topic: /visualization_marker_array
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: Input Path
+      Topic: /input_path
+      Color: 0; 255; 0
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: Processed Path
+      Topic: /processed_path
+      Color: 255; 0; 0
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: false
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 10
+      Name: Current View
+      Target Frame: <Fixed Frame>
