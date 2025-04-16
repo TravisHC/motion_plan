@@ -136,6 +136,8 @@ public:
 
         targetSub = this->create_subscription<geometry_msgs::msg::PoseStamped>(
             targetTopic, 10, std::bind(&ClickGen::targetCallBack, this, std::placeholders::_1));
+
+        visualizer = std::make_shared<Visualizer>();
     }
 
     void targetCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr msg) {        
@@ -181,10 +183,6 @@ public:
                 traj.emplace_back(timeAllocationVector(i),
                                   coefficientMatrix.block<6, 3>(6 * i, 0).transpose().rowwise().reverse());
             }
-        }
-        if(visualizer==nullptr){
-            RCLCPP_ERROR(this->get_logger(), "Visualizer is not initialized!");
-            visualizer = std::make_shared<Visualizer>();
         }
         visualizer->visualize(traj, positions.leftCols(positionNum));
     }
